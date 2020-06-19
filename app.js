@@ -4,6 +4,7 @@ var express     = require("express"),
     LocalStrategy= require("passport-local"),
     bodyParser  = require("body-parser"),
     mongoose    = require("mongoose"),
+    methodOverride= require("method-override"),
     Campground  = require("./models/campground.js"),
     Comment     = require("./models/comment.js"),
     User        = require("./models/user");
@@ -17,6 +18,8 @@ var express     = require("express"),
 mongoose.connect("mongodb://localhost/yelp_camp_v6", { useNewUrlParser: true,useUnifiedTopology: true });
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname+"/public"));
+app.use(methodOverride("_method"));
+
 app.set("view engine", "ejs");
 //passport config
 app.use(require("express-session")({
