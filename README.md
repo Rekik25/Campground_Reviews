@@ -1,17 +1,14 @@
-Editting comments
+Adding in flask
 
-    Add edit route to comments
-    Add edit button
-    Add update button
+    Install and configure connect-flask
+    Add bootstrap alerts to header
 
-Deleting comments
+Landing page refactor
 
-    Add destroy route
-    Add delete button
+    set the slide show in the landing page
+    install nodemon it is a module which make changes we dont have to restart server again
+    to check full tut check github nax3t/background slider
 
-Authorisation part 2: comments
+Dynamic price feature list
 
-    User can only edit his or her comment
-    User can only delete his or her comment
-    Hide/show edit and delete buttons
-    refactor middleware
+    change schema of campground
