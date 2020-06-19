@@ -2,7 +2,7 @@
 var Campground = require("../models/campground");
 var Comment    = require("../models/comment");
 var middlewareObj = {};
-middlewareObj.checkCampgroundOwnership = function checkCampgroundOwnership(req, res, next) {
+middlewareObj.checkCampgroundOwnership = function (req, res, next) {
     //is user logged in at all?
   if (req.isAuthenticated()){
     Campground.findById(req.params.id, function(err, foundCampground){

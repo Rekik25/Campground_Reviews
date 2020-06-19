@@ -3,7 +3,7 @@ var router = express.Router();
 var Campground = require("../models/campground");
 var middleware = require("../middleware");
 //here, you could have written ../middleware/index.js
-//but, index.js is always automatically require
+//but, index   .js is always automatically require
 // the contents of index.js
 //
 //index-shows all campgrounds
@@ -14,7 +14,7 @@ router.get("/", function(req, res){
      else{res.render("campgrounds/index.ejs",{data:allcampgrounds});}
   });
  //
-});
+}); 
 //create route
 router.post("/", middleware.isLoggedIn,  function(req, res){
   var name_ret = req.body.name;
