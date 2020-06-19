@@ -1,22 +1,8 @@
-Auth pt 1-Add user Model
+Refactor the routes
 
-    Install all packages needed for auth
-    Define user model
+    Basically make our app.js simple and smaller so that its easy to understand
 
-Auth pt 2- Register
+Users+ comment
 
-    configure Passport
-    Add register route
-    Add register template
-
-Auth pt 3- Login
-
-    Add login routes
-    Add login templates
-
-Auth Pt 4 - Logout
-
-    Add logout route
-    Prevent User from adding a comment if not signin
-    Add links to navbar
-    Show hide auth links correctly
+    Associate users and comment
+    Save author's name to a comment automatically
