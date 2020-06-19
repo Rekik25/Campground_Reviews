@@ -14,12 +14,19 @@ router.post("/", isLoggedIn, function(req,res){
   Campground.findById(req.params.id, function(err, campground){
     if(err){console.log(err);res.redirect("/campgrounds");}
     else{
-      console.log(req.body.comment);
+      //console.log(req.body.comment);
       Comment.create(req.body.comment, function(err, comment){
         if(err){console.log(err);}
         else{
+          //add username and id to connect
+          comment.author.id = req.user._id;
+          comment.author.username = req.user.username;
+          //req.user
+          comment.save()
+          //save comment
           campground.comments.push(comment);
           campground.save();
+          console.log(comment);
           res.redirect("/campgrounds/" + campground._id);
         }
       });

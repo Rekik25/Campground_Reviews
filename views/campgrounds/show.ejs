@@ -16,6 +16,11 @@
           <h4 class="pull-right">$9.00/night</h4>
           <h4><a href=""><%= campground.name%></a></h4>
           <p><%= campground.description%></p>
+          <p>
+            <em>
+              Submitted by <%= campground.author.username%>
+            </em>
+          </p>
           
         </div>
       </div>
@@ -27,7 +32,7 @@
         <hr>
         <% campground.comments.forEach(function(comment){ %>
           <p>
-            <strong><%= comment.author%></strong> - <%= comment.text%>
+            <strong><%= comment.author.username%></strong> - <%= comment.text%>
           </p>
       <% }); %>
       </div>

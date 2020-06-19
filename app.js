@@ -13,7 +13,7 @@ var express     = require("express"),
     campgroundRoutes  = require("./routes/campgrounds"),
     indexRoutes       = require("./routes/index");
 
-seedDB();
+//seedDB();// seed the database
 mongoose.connect("mongodb://localhost/yelp_camp_v6", { useNewUrlParser: true,useUnifiedTopology: true });
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname+"/public"));
