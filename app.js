@@ -1,14 +1,15 @@
-var express     = require("express"),
-    app         = express(),
-    passport    = require("passport"),
-    LocalStrategy= require("passport-local"),
-    bodyParser  = require("body-parser"),
-    mongoose    = require("mongoose"),
+var express       = require("express"),
+    app           = express(),
+    passport      = require("passport"),
+    flash         = require("connect-flash"),
+    LocalStrategy = require("passport-local"),
+    bodyParser    = require("body-parser"),
+    mongoose      = require("mongoose"),
     methodOverride= require("method-override"),
-    Campground  = require("./models/campground.js"),
-    Comment     = require("./models/comment.js"),
-    User        = require("./models/user");
-    seedDB      = require("./seeds"),
+    Campground    = require("./models/campground.js"),
+    Comment       = require("./models/comment.js"),
+    User          = require("./models/user");
+    seedDB        = require("./seeds"),
     // requiring routes
     commentRoutes     = require("./routes/comments"),
     campgroundRoutes  = require("./routes/campgrounds"),
@@ -19,7 +20,7 @@ mongoose.connect("mongodb://localhost/yelp_camp_v6", { useNewUrlParser: true,use
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname+"/public"));
 app.use(methodOverride("_method"));
-
+app.use(flash());   // to use flash
 app.set("view engine", "ejs");
 //passport config
 app.use(require("express-session")({
@@ -35,7 +36,11 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use(function(req,res,next){
-  res.locals.currentUser = req.user; next();
+  res.locals.currentUser = req.user; 
+  res.locals.error = req.flash("error"); 
+  res.locals.success = req.flash("success"); 
+  next();
+
 });
 
 app.use("/campgrounds/:id/comments", commentRoutes);
