@@ -1,5 +1,10 @@
-Create New/Create
+Refactor mongoose code
 
-    Discuss nested route
-    Add the comment new and create route
-    Add the new comment form
+    Create a models directry
+    Use module exports
+    Require everything correctly
+
+Add Seeds File
+
+    Add a seeds.js file
+    Run the seeds file every time the server starts
