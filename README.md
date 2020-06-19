@@ -1,10 +1,22 @@
-Refactor mongoose code
+Auth pt 1-Add user Model
 
-    Create a models directry
-    Use module exports
-    Require everything correctly
+    Install all packages needed for auth
+    Define user model
 
-Add Seeds File
+Auth pt 2- Register
 
-    Add a seeds.js file
-    Run the seeds file every time the server starts
+    configure Passport
+    Add register route
+    Add register template
+
+Auth pt 3- Login
+
+    Add login routes
+    Add login templates
+
+Auth Pt 4 - Logout
+
+    Add logout route
+    Prevent User from adding a comment if not signin
+    Add links to navbar
+    Show hide auth links correctly
